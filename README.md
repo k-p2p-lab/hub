@@ -113,7 +113,7 @@ For experiments using **v3**, reference the [public implementation repository][v
 
 <div align="center">
   <sub>
-    <b>K-P2PLab · Computer Network Laboratory</b>, <i>Keimyung University, Daegu, Republic of Korea</i>
+    <b><a href="https://github.com/k-p2p-lab">K-P2PLab</a> · <a href="https://comnet.kmu.ac.kr">Computer Network Laboratory</a></b>, <i><a href="https://www.kmu.ac.kr">Keimyung University</a>, Daegu, Republic of Korea</i>
   </sub>
 </div>
 
