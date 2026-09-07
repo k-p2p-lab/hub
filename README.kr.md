@@ -46,7 +46,7 @@
 | --- | --- | --- |
 | 테스트베드의 목적과 역할 간 관계 | 아래 개요, 설계 원칙, 개념 아키텍처 | [구성 요소, 통신 경로, 격리][v3-architecture] |
 | 실험을 정의하고 실행하는 방법 | 아래 실험 주기 | [시나리오 설정][v3-scenarios]과 [REST API][v3-api] |
-| 여러 호스트에 워크로드를 분산하는 방법 | 아래 다중 호스트 실행 원칙 | [Linux 배포][v3-linux]와 [Swarm 배포][v3-swarm] |
+| 여러 호스트에 워크로드를 분산하는 방법 | 아래 다중 호스트 실행 원칙 | [Swarm 배포][v3-swarm] |
 | 관측으로 확인할 수 있는 범위 | [연구와 결과 보고 원칙](docs/RESEARCH.kr.md) | [지표 정의][v3-metrics], [모니터링과 결과][v3-monitoring], [토폴로지 뷰][v3-topology] |
 | 인용할 연구 | [논문과 인용 안내](docs/RESEARCH.kr.md) | [v3 소스와 변경 이력][v3-repo] |
 
@@ -181,7 +181,6 @@ K-P2PLab은 여러 연구 구현을 거치며 발전했습니다. 각 버전은 
 [v3-architecture]: https://github.com/k-p2p-lab/v3/blob/master/docs/architecture.kr.md
 [v3-scenarios]: https://github.com/k-p2p-lab/v3/blob/master/docs/scenario-reference.kr.md
 [v3-api]: https://github.com/k-p2p-lab/v3/blob/master/docs/api.kr.md
-[v3-linux]: https://github.com/k-p2p-lab/v3/blob/master/docs/linux-deployment.kr.md
 [v3-swarm]: https://github.com/k-p2p-lab/v3/blob/master/docs/swarm.kr.md
 [v3-metrics]: https://github.com/k-p2p-lab/v3/blob/master/docs/experiment-metrics.kr.md
 [v3-monitoring]: https://github.com/k-p2p-lab/v3/blob/master/docs/monitoring.kr.md
