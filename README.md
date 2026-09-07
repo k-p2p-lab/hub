@@ -8,6 +8,11 @@
   </p>
 
   <p>
+    <b>English</b> ·
+    <a href="./README.kr.md">한국어</a>
+  </p>
+
+  <p>
     <b>Overview</b> ·
     <a href="./docs/RESEARCH.md">Research</a> ·
     <a href="https://github.com/k-p2p-lab/v3">Public Implementation</a>
@@ -20,11 +25,22 @@
 
 **K-P2PLab** is a research testbed for constructing, running, and analyzing peer-to-peer (P2P) networks under controlled experimental conditions. It executes real P2P software in separate peer containers, with workloads distributed across hosts under central orchestration.
 
-This repository is the **project-level hub** for K-P2PLab. It brings together the project's objectives, design principles, conceptual architecture, and research publications. Source code, deployment instructions, and version-specific documentation belong to the corresponding implementation repositories.
+This repository is the **project-level hub** for K-P2PLab. It brings together the project's objectives, design principles, conceptual architecture, evolution, and research publications.
 
 > **Centralized experiment control. Distributed peer execution.**
 >
 > The platform coordinates the experiment centrally; experimental P2P messages are exchanged between peers.
+
+---
+
+## Documentation Scope
+
+| Repository | Canonical contents |
+| --- | --- |
+| **K-P2PLab Hub** | Project objectives, version-independent design principles, conceptual architecture, project evolution, research topics, publications, and citation guidance. |
+| **Implementation repositories** | Executable behavior, APIs and scenario schemas, commands and environment variables, deployment, exact metric formulas and events, operational constraints, and version-specific validation records. |
+
+For a topic that spans both scopes, this Hub states the stable concept and links to the implementation repository for the exact contract. The current public implementation is [K-P2PLab v3][v3-repo].
 
 ---
 
@@ -41,19 +57,37 @@ Container isolation separates peer execution and networking environments; it doe
 
 ---
 
-## Architecture
+## Conceptual Architecture
 
-![K-P2PLab conceptual architecture](./figs/diagram.png)
+```mermaid
+flowchart TB
+    Researcher[Researcher]
+    Control[Experiment control]
+    Execution[Distributed execution]
+    PeerA[Isolated peer]
+    PeerB[Isolated peer]
+    PeerN[Isolated peer]
+    Network[(Experimental P2P network)]
+    Observation[Observation and analysis]
+    Results[Experimental results]
 
-*Central experiment control, distributed execution, and an experimental P2P network.*
+    Researcher -->|defines and controls| Control
+    Control --> Execution
+    Execution --> PeerA
+    Execution --> PeerB
+    Execution --> PeerN
+    PeerA <--> Network
+    PeerB <--> Network
+    PeerN <--> Network
+    Execution --> Observation
+    Network --> Observation
+    Observation --> Results
+    Results --> Researcher
+```
 
-**Control.** The controller coordinates experimental actions and manages their execution across the platform.
+**Control** coordinates experimental actions and peer lifecycles. **Execution** places and manages isolated peer workloads across hosts. The peers exchange protocol traffic through the **experimental P2P network**. **Observation** records behavior and produces results for the researcher.
 
-**Execution.** In the current architecture, host-local agents manage peer containers. Peers on different hosts participate in the same experimental P2P network.
-
-**Observation.** Monitoring and analysis components expose peer state, network topology, and message propagation behavior for inspection and evaluation.
-
-The illustration summarizes the conceptual organization. Component names, deployment mechanisms, and supported capabilities may differ between versions.
+The diagram intentionally describes roles rather than a particular orchestrator, monitoring product, protocol, or operating-system mechanism. See the [v3 architecture guide][v3-architecture] for the concrete public implementation.
 
 ---
 
@@ -78,7 +112,6 @@ For installation, configuration, supported features, and implementation-specific
 </div>
 
 [v3-repo]: https://github.com/k-p2p-lab/v3
+[v3-architecture]: https://github.com/k-p2p-lab/v3/blob/master/docs/architecture.md
 [v1-paper]: https://doi.org/10.22670/knom.2024.27.2.40
 [v2-paper]: https://doi.org/10.23919/APNOMS67058.2025.11181317
-[ntcm-paper]: https://doi.org/10.1109/ICBC67748.2026.11575499
-[churn-paper]: https://doi.org/10.23919/APNOMS67058.2025.11181302
