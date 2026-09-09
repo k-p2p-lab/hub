@@ -53,11 +53,15 @@
 - 전달 성공 여부와 독립적으로 수신 자격을 정합니다. 생존한 피어만의 결과를 최초 피어 집합에 대한 도달률로 오해하지 않도록 이탈과 집합 커버리지를 함께 보고합니다.
 - 도달률, 지연, 중복 수신과 프로토콜 오버헤드를 하나의 효율 값으로 합치지 않고 구분합니다.
 - 메시지, 수신자, 수신자-메시지 쌍, RPC, 식별자 참조, 바이트 등 집계 단위와 규칙을 명시합니다. 지연이 성공한 전달만을 포함하는지도 밝힙니다.
+- 직접 측정한 값, 메타정보에서 추정한 값, 모델 예측과 고정 참고자료를 구분하십시오. 추정에는 사용한 근거·가정·미분류 비율을 함께 보고하고, 상관이나 기준 실험과의 차이만으로 전파 원인이나 인과 효과를 단정하지 마십시오.
+- 설정한 전송률 제한, 관측한 바이트·전송률, 물리 회선의 용량을 구분하십시오. 측정 계층과 방향을 명시하고 같은 전송의 양쪽 끝을 중복 합산하지 않도록 하십시오.
 - 텔레메트리 누락을 프로토콜 실패로 해석하지 않도록 누락되거나 불확실한 관측을 명시합니다.
 - 실험을 재현하는 데 필요한 구현 버전 또는 커밋, 시나리오, 설정과 무작위화 입력을 기록합니다.
 - 관측 결과와 설정 목표를 구분하고, 과거 검증 기록과 현재 리비전에서 수행한 검사를 구분합니다. 입력을 반복해도 분산 실행이 같아지는 것은 아닙니다.
 
-위 항목은 프로젝트 수준의 원칙입니다. 정확한 이벤트 스키마, 공식, 기본값과 내보내기 동작은 버전별 구현 계약이며, 현재 공개 구현체는 [v3 실험 지표 가이드][v3-metrics]에서 설명합니다.
+위 항목은 프로젝트 수준의 원칙입니다. 정확한 이벤트 스키마, 공식, 기본값과 내보내기 동작은 버전별 구현 계약입니다.
+
+현재 v3에서 수집·추정하는 지표의 정확한 정의는 [실험 지표][v3-metrics]와 [대역폭 측정][v3-bandwidth]에 있습니다. [저장 결과 시각화][v3-visualization]는 반복 비교와 이미지·자료 내보내기 방법을, [API][v3-api]는 분석 작업과 로그 필드를 설명합니다. 비교에는 지표 이름뿐 아니라 정의 버전·모집단·단위·집계 규칙이 같은지 확인하십시오.
 
 ---
 
@@ -123,6 +127,9 @@ Sungwook Lee, Hyungyeop Kim, Seungmin Kim, and Hongtaek Ju.<br>
 [v3-metrics]: https://github.com/k-p2p-lab/v3/blob/master/docs/experiment-metrics.kr.md
 [v3-architecture]: https://github.com/k-p2p-lab/v3/blob/master/docs/architecture.kr.md
 [v3-scenarios]: https://github.com/k-p2p-lab/v3/blob/master/docs/scenario-reference.kr.md
+[v3-visualization]: https://github.com/k-p2p-lab/v3/blob/master/docs/visualization.kr.md
+[v3-bandwidth]: https://github.com/k-p2p-lab/v3/blob/master/docs/bandwidth.kr.md
+[v3-api]: https://github.com/k-p2p-lab/v3/blob/master/docs/api.kr.md
 [hyparview]: https://www.dpss.inesc-id.pt/~ler/reports/dsn07-leitao.pdf
 [icac-reliability]: https://www.usenix.org/system/files/conference/icac13/icac13_pongthawornkamol.pdf
 [v1-paper]: https://doi.org/10.22670/knom.2024.27.2.40

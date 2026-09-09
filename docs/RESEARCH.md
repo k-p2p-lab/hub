@@ -53,11 +53,15 @@ An overlay describes protocol relationships between peers. Host placement descri
 - Choose eligibility independently of delivery success. Report departures and population coverage so a survivor-only result is not mistaken for delivery to the original population.
 - Distinguish delivery, latency, duplicate reception, and protocol overhead rather than combining them into one efficiency value.
 - State the unit and aggregation rule: per message, receiver, receiver-message pair, RPC, identifier reference, or byte. Identify whether latency includes only successful deliveries.
+- Distinguish direct measurements, metadata estimates, model predictions, and fixed reference data. Report evidence, assumptions, and unclassified coverage with estimates; correlation or a baseline difference alone does not establish a forwarding cause or causal effect.
+- Distinguish a configured rate limit, observed bytes/throughput, and physical link capacity. State the measurement layer and direction, including whether both endpoints of one transfer are counted.
 - Report missing or uncertain observations explicitly so telemetry gaps are not interpreted as protocol failure.
 - Record the implementation version or commit, scenario, configuration, and randomization inputs needed to reproduce an experiment.
 - Separate an observed result from a configured target and a historical validation record from a check performed on the current revision. Repeated inputs do not guarantee identical distributed execution.
 
-These are project-level principles. Exact event schemas, formulas, defaults, and export behavior are versioned implementation contracts; see the [v3 experiment metrics guide][v3-metrics] for the current public implementation.
+These are project-level principles. Exact event schemas, formulas, defaults, and export behavior are versioned implementation contracts.
+
+For current v3 measurements and estimates, use [experiment metrics][v3-metrics] and [bandwidth measurement][v3-bandwidth]. [Saved-result visualization][v3-visualization] describes repeat comparisons and image/data exports; [API][v3-api] defines analysis jobs and log fields. Check definition version, population, units, and aggregation before comparing values with the same metric name.
 
 ---
 
@@ -123,6 +127,9 @@ For experiments using **v3**, reference the [public implementation repository][v
 [v3-metrics]: https://github.com/k-p2p-lab/v3/blob/master/docs/experiment-metrics.md
 [v3-architecture]: https://github.com/k-p2p-lab/v3/blob/master/docs/architecture.md
 [v3-scenarios]: https://github.com/k-p2p-lab/v3/blob/master/docs/scenario-reference.md
+[v3-visualization]: https://github.com/k-p2p-lab/v3/blob/master/docs/visualization.md
+[v3-bandwidth]: https://github.com/k-p2p-lab/v3/blob/master/docs/bandwidth.md
+[v3-api]: https://github.com/k-p2p-lab/v3/blob/master/docs/api.md
 [hyparview]: https://www.dpss.inesc-id.pt/~ler/reports/dsn07-leitao.pdf
 [icac-reliability]: https://www.usenix.org/system/files/conference/icac13/icac13_pongthawornkamol.pdf
 [v1-paper]: https://doi.org/10.22670/knom.2024.27.2.40

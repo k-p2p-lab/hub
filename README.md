@@ -48,6 +48,7 @@ For a topic that spans both scopes, this Hub states the stable concept and links
 | How an experiment is defined and executed | Experiment cycle below | [Scenario configuration][v3-scenarios] and [REST API][v3-api] |
 | How workloads span hosts | Multi-host execution principle below | [Swarm deployment][v3-swarm] |
 | What an observation can establish | [Research and reporting principles](docs/RESEARCH.md) | [Metric definitions][v3-metrics], [monitoring and results][v3-monitoring], and [topology views][v3-topology] |
+| How to visualize retained results and compare repetitions | [Research and reporting principles](docs/RESEARCH.md) | [Saved-result visualization][v3-visualization], [analysis and log API][v3-api], and [bandwidth measurement][v3-bandwidth] |
 | Which work to cite | [Publications and citation guidance](docs/RESEARCH.md) | [v3 source and revision history][v3-repo] |
 
 ---
@@ -180,10 +181,12 @@ For installation, configuration, supported features, and implementation-specific
 [v3-repo]: https://github.com/k-p2p-lab/v3
 [v3-architecture]: https://github.com/k-p2p-lab/v3/blob/master/docs/architecture.md
 [v3-scenarios]: https://github.com/k-p2p-lab/v3/blob/master/docs/scenario-reference.md
-[v3-api]: https://github.com/k-p2p-lab/v3/blob/master/docs/api.md
 [v3-swarm]: https://github.com/k-p2p-lab/v3/blob/master/docs/swarm.md
 [v3-metrics]: https://github.com/k-p2p-lab/v3/blob/master/docs/experiment-metrics.md
 [v3-monitoring]: https://github.com/k-p2p-lab/v3/blob/master/docs/monitoring.md
 [v3-topology]: https://github.com/k-p2p-lab/v3/blob/master/docs/topology.md
+[v3-api]: https://github.com/k-p2p-lab/v3/blob/master/docs/api.md
+[v3-visualization]: https://github.com/k-p2p-lab/v3/blob/master/docs/visualization.md
+[v3-bandwidth]: https://github.com/k-p2p-lab/v3/blob/master/docs/bandwidth.md
 [v1-paper]: https://doi.org/10.22670/knom.2024.27.2.40
 [v2-paper]: https://doi.org/10.23919/APNOMS67058.2025.11181317
